@@ -1,0 +1,25 @@
+<div class="shopping-book-main">
+    <ul  fxLayout="row wrap">
+        <li *ngFor="let mathsbookslist of mathdata">
+            <div class="shopping-book-pad">
+                <mat-card class="cardshadow">
+                    <img mat-card-image src="https://raw.githubusercontent.com/LakkamTejasri/shopping-add-cart/master/src/assets/images/telugubooks/science/level1.jpg"> 
+                    <mat-card-content class="mt-10">
+                        <p><span class="fontBold font16">{{mathsbookslist.booktype}} </span>: <span class="font13 ">{{mathsbookslist.type}}</span></p>
+                        <p><span class="fontBold font16">{{mathsbookslist.pricename}} </span> : <span class="font13 ">{{mathsbookslist.price}}</span></p>
+                    </mat-card-content>
+                    <mat-card-actions fxlayout="row" fxLayoutAlign="space-between start">
+                        <button mat-button class="bg-btn">{{mathsbookslist.buy}}</button>
+                        <button mat-button class="bg-btn" (click)="add_cart(mathsbookslist)" ><mat-icon>add</mat-icon></button>
+                    </mat-card-actions>
+             </mat-card>
+            </div> 
+        </li>
+    </ul>
+    <div fxLayout="row" fxLayoutAlign="center end">
+        <button mat-fab color="primary" class="floating-btn" [matBadge]="cartlength"  routerLink="/addcart">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+    </div>
+</div>
+

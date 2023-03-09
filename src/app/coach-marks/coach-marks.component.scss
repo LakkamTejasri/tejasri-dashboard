@@ -1,0 +1,36 @@
+.shopping-book-main{
+    height:calc(100% - 64px);
+    width:calc(100% - 270px);
+    mat-card{
+        min-width: 350px;
+        width: 350px;
+        &.active0
+        {
+            display: block;
+            position: absolute;
+            left:50%;
+            top:50%;
+        }
+        &.active1
+        {
+          
+            display: block;
+            position: absolute;
+            right:50%;
+            bottom: 10%;
+           
+        }
+        background: black;
+        color: #fff;
+        .bg-btn{
+            background: #328733;
+            color: #fff;
+          
+
+        }
+    }
+                   
+}
+.bg-btn.disabled{
+background: rgb(119, 119, 119)  !important;
+}

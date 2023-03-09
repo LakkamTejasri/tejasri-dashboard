@@ -1,0 +1,26 @@
+.shopping-book-main{
+    ul{
+        li{
+            width:calc(25% - 20px);
+            .shopping-book-pad{
+                margin: 10px;
+                .cardshadow{
+                    box-shadow: 0px 4px 6px #020096f5;
+                    .bg-btn{
+                        background: #328733;
+                        color: #fff;
+                        mat-icon{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.floating-btn{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+}

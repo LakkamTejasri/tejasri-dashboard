@@ -1,0 +1,40 @@
+
+<div class="h100 login-header-main" fxLayout="row" fxLayoutAlign="center center">
+   
+        <mat-card class="login-mat-card" fxLayout="row">
+            <img mat-card-image src="../../assets/images/login.webp" alt="Photo of a Shiba Inu">
+            <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxFlex class="login-fields-main"> 
+                <h2 class="login-header-title">Login</h2>
+                <form action="" >
+                    <div class="column">
+                        <div fxLayout="column">
+                            <mat-label>Email</mat-label> 
+                            <input type="email" matInput  class="usernamefield" [formControl]="emailFormControl" #email  [errorStateMatcher]="matches">
+                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Please enter a valid password
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('')">
+                                Email is <strong>required</strong>
+                              </mat-error>
+                        </div>
+                        <div fxLayout="column">
+                            <mat-label>Password</mat-label>
+                            <input type="password" class="usernamefield" matInput  class="usernamefield" [formControl]="passwordFormControl" #password [errorStateMatcher]="matches">
+                           
+                            <mat-error *ngIf="passwordFormControl.hasError('pattern') && !passwordFormControl.hasError('required')">
+                                Please enter a valid password
+                            </mat-error>
+                            <mat-error *ngIf="passwordFormControl.hasError('')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                    </div>
+                </form>
+                    <div class="w100 pt-10" fxLayout="row" fxLayoutAlign="space-between center">
+                        <button class="login-btn" (click)="submit(email.value,password.value)" mat-button>Login </button>
+                        <span class="forgot-color">Forgot password?</span>
+                    </div>
+            </mat-card-content>
+        </mat-card>
+   
+</div> 

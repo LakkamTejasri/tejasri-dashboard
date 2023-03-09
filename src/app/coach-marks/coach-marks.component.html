@@ -1,0 +1,14 @@
+ <div class="shopping-book-main ptb-10" fxFlex fxlayout="column" fxLayoutAlign="start end"> 
+    <!-- <div class="shopping-book-main pad-20" fxLayout="row" fxFlex > -->
+    <mat-card class="{{datalist.myclass}}" >
+        <mat-card-content>
+           <div>
+                <p>{{datalist.data}}</p>
+           </div>
+        </mat-card-content>
+        <mat-card-actions fxlayout="row" fxLayoutAlign="space-between end">
+            <button mat-button class="bg-btn mr-10" [ngClass]="{'disabled': i==0}" [disabled]="i==0" (click)="previous()" >Previous</button>
+            <button mat-button class="bg-btn" [ngClass]="{'disabled': i==2}" [disabled]="i==2" (click)="shownext()" >Next</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

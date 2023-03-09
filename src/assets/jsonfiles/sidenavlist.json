@@ -1,0 +1,38 @@
+[
+    {
+        "MATICON":"dashboard",
+        "LISTNAME":"Dashboard",
+        "path":"/dashboard/mydashboard"
+      
+    },
+    {
+        "MATICON":"people",
+        "LISTNAME":"My Cv",
+        "path":"/dashboard/mycv"
+      
+    },
+    {
+        "MATICON":"people",
+        "LISTNAME":"Coach-Marks",
+        "path":"/dashboard/coachMarks"
+      
+    },
+    {
+        "MATICON":" library_books",
+        "LISTNAME":"Shopping Books",
+        "path":"/dashboard/shoppingbooks",
+        "childcomponent":[
+            {
+                "MATICON":" import_contacts",
+                "LISTNAME":"Math-Books",
+                "path":"/dashboard/shoppingbooks/mathBooks"
+            },
+            {
+                "MATICON":" auto_stories",
+                "LISTNAME":"Science-Books",
+                "path":"/dashboard/shoppingbooks/scienceBooks"
+            }
+        ]
+    }
+   
+]

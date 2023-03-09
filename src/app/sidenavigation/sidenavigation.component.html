@@ -1,0 +1,100 @@
+
+<app-header></app-header>
+<mat-sidenav-container class="tp-container sidnavigantion-main" #scroller1>
+   <mat-sidenav mode="side" opened class="sidenavopened" fxFlex fxLayout="column">
+      <div class="pb0">
+         <img src="../../assets/images/login.webp" alt="">
+         <h2 class="t-center mar0 font16 fontweight400">Tejasri Lakkam</h2>
+         <p class="t-center color-grey">emailto: lakkamtejasri@gmail.com</p>
+         <mat-divider></mat-divider>
+      </div>
+      <ul class="pad0">
+         <!-- <li>
+            <div class="menu-list" [ngClass]="{'active': activeClass}">
+               <a href="javascript:void(0)" fxLayoutAlign="start center" routerLink="/dashboard/my-dashboard" class="ml-10 ptb-10">
+                  <mat-icon class="menu-list-icons mr-10">dashboard</mat-icon>
+                  <span>Dashboard</span>
+               </a>
+            </div>
+
+         </li>
+         <li>
+            <div class="menu-list" [ngClass]="{'active': activeClass}">
+               <a href="javascript:void(0)" routerLink="/dashboard/mycv" fxLayoutAlign="start center" class="ml-10 ptb-10">
+                  <mat-icon class="menu-list-icons mr-10">people</mat-icon>
+                  <span>My Cv</span>
+               </a>
+            </div>
+
+         </li>
+         <li>
+            <div class="menu-list" fxLayoutAlign="space-between center" (click)="menuSubList()">
+               <a href="javascript:void(0)" fxLayoutAlign="start center" class="ml-10 ptb-10" >
+                  <mat-icon class="menu-list-icons mr-10"> library_books</mat-icon>
+                  <span>Shopping Books</span>
+               </a>
+               <span [ngClass]="{'iconrotation':menuSubListdetails}"> <mat-icon class="color-grey"> arrow_drop_down</mat-icon></span>
+            </div>
+            <ul class="mt-10 pad0" *ngIf="menuSubListdetails">
+               <li>
+                  <div class="menu-list  pl-20"  [routerLinkActive]="['active']" >
+                     <a href="javascript:void(0)" routerLink="/dashboard/shoppingBooks/mathBooks" fxLayoutAlign="start center" class="ml-10 ptb-10">
+                        <mat-icon class="menu-list-icons mr-10"> import_contacts</mat-icon>
+                        <span>Math-Books</span>
+                     </a>
+                  </div>
+               </li>
+               <li>
+                  <div class="menu-list  pl-20" [routerLinkActive]="['active']">
+                     <a href="javascript:void(0)" routerLink="/dashboard/shoppingBooks/scienceBooks" fxLayoutAlign="start center" class="ml-10 ptb-10">
+                        <mat-icon class="menu-list-icons mr-10">auto_stories</mat-icon>
+                        <span>Science-Books</span>
+                     </a>
+                  </div>
+               </li>
+            </ul>
+         </li> -->
+
+         <li *ngFor="let items of navlist;let i = index">
+            <div class="menu-list" fxLayoutAlign="space-between center" (click)="menuSubList(i)" routerLink="{{items.path}}">
+               <a href="javascript:void(0)" fxLayoutAlign="start center" class="ml-10 ptb-10" >
+                  <mat-icon class="menu-list-icons mr-10">{{items.MATICON}}</mat-icon>
+                  <span>{{items.LISTNAME}}</span>
+               </a>
+               <span *ngIf="items.childcomponent" [ngClass]="{'iconrotation':menuSubListdet}" > <mat-icon class="color-grey"> arrow_drop_down</mat-icon></span>
+            </div>
+            <ul class="mt-10 pad0" *ngIf="items.childcomponent && menuSubListdetails == i && menuSubListdet">
+               <li>
+                  <div class="menu-list  pl-20" routerLink="{{items.childcomponent[0].path}}" [routerLinkActive]="['active']" >
+                     <a href="javascript:void(0)"  fxLayoutAlign="start center" class="ml-10 ptb-10">
+                        <mat-icon class="menu-list-icons mr-10"> {{items.childcomponent[0].MATICON}}</mat-icon>
+                        <span>{{items.childcomponent[0].LISTNAME}}</span>
+                     </a>
+                  </div>
+               </li>
+                <li>
+                  <div class="menu-list  pl-20" routerLink="{{items.childcomponent[1].path}}" [routerLinkActive]="['active']" >
+                     <a href="javascript:void(0)"  fxLayoutAlign="start center" class="ml-10 ptb-10">
+                        <mat-icon class="menu-list-icons mr-10"> {{items.childcomponent[1].MATICON}}</mat-icon>
+                        <span>{{items.childcomponent[1].LISTNAME}}</span>
+                     </a>
+                  </div>
+               </li>
+               
+               <!-- <li>
+                  <div class="menu-list  pl-20" [routerLinkActive]="['active']">
+                     <a href="javascript:void(0)" routerLink="/dashboard/shoppingBooks/scienceBooks" fxLayoutAlign="start center" class="ml-10 ptb-10">
+                        <mat-icon class="menu-list-icons mr-10">auto_stories</mat-icon>
+                        <span>Science-Books</span>
+                     </a>
+                  </div>
+               </li> -->
+            </ul>
+         
+      </ul>
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>
+
