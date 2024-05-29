@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,10 +64,7 @@ import { AddcartComponent } from './shopping-books/addcart/addcart.component';
     MatDividerModule,
     MatBadgeModule
   ],
-  providers: [{
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy,
-    }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
